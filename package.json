@@ -1,0 +1,27 @@
+{
+  "name": "client-finder-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n \"api,web\" -c \"blue,green\" \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "npm --workspace=@client-finder/api run dev",
+    "dev:web": "npm --workspace=@client-finder/web run dev",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "tsc --build",
+    "lint": "tsc --build --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "concurrently": "^10.0.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

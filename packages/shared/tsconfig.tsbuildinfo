@@ -1,0 +1,1 @@
+{"root":["./src/contactactions.ts","./src/csvvalidator.ts","./src/deduplication.ts","./src/index.ts","./src/messagegenerator.ts","./src/normalizer.ts","./src/scoring.ts","./src/ssrfprotection.ts","./src/types.ts"],"version":"5.9.3"}
